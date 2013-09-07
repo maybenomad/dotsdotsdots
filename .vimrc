@@ -20,10 +20,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles to make stuff look sexy
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle 'flazz/vim-colorschemes'
 
 " Language specific bundles
 Bundle "haesken/vimclojure-vundle"
+Bundle "wting/rust.vim"
 
 
 " ########## Formatting  ##########
@@ -77,7 +78,7 @@ set nofoldenable			" Don't fold by default
 " ########## Style ##########
 
 set guifont=Source\ Code\ Pro:h14
-colorscheme Mellow
+colorscheme badwolf
 
 
 " ########## Clojure ##########
