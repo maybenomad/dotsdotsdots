@@ -58,7 +58,7 @@ function DeletePair()
 endf
 
 inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
+inoremap { {}<Left><CR><CR><Up><Tab>
 inoremap [ []<Esc>i
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
