@@ -57,8 +57,18 @@ function DeletePair()
   endif
 endf
 
+function BreakBraces() 
+  let line_capture = getline('.')[(col('.')-1)]
+  if line_capture ==? "}"
+    return "\<CR>\<CR>\<Up>\<Tab>"
+  else
+    return "\<CR>"
+endf
+
+inoremap <CR> <c-r>=BreakBraces()<CR>
+
 inoremap ( ()<Esc>i
-inoremap { {}<Left><CR><CR><Up><Tab>
+inoremap { {}<Esc>i
 inoremap [ []<Esc>i
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
