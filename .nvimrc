@@ -1,7 +1,6 @@
 " Use Vim settings instead of shitty Vi ones. 
 set nocompatible
 
-
 " ########## General Settings ##########
 
 set number				" Line numbers
@@ -23,7 +22,8 @@ call vundle#begin()
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mxw/vim-jsx'
-Plugin 'othree/yajs.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'plasticboy/vim-markdown'
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
@@ -53,8 +53,13 @@ set nofoldenable			" Don't fold by default
 
 " ########## Style ##########
 
-set guifont=Anonymous\ Pro:h16
+set guifont=Anonymous\ Pro:h20
 colorscheme hornet 
 
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
+
+set list
+set listchars=""
+set listchars+=tab:\ \ 
+set listchars+=trail:💩
