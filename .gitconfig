@@ -1,0 +1,13 @@
+[user]
+  name = Rocco Nicosia
+  email = rocco.nicosia@insightpool.com
+
+[alias]
+  st = status
+  ci = commit --verbose
+  co = checkout
+  aa = add --all
+  b = branch
+  tagdatshit = "!f() { git tag $1 && git push upstream development --tags; }; f"
+[push]
+	default = simple
