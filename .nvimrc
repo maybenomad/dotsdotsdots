@@ -1,6 +1,12 @@
 " Use Vim settings instead of shitty Vi ones. 
 set nocompatible
 
+" Autoreload on save.
+augroup reload_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
 " ########## General Settings ##########
 
 set number				" Line numbers
