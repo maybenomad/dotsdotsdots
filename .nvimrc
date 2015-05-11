@@ -9,8 +9,11 @@ set autoread				" Reload externally modified files
 set hidden				" Background text buffering
 set noswapfile
 
-syntax on				" Syntax highlighting, wee!
+set laststatus=2 " Enabled status line
+set statusline+=%F " Show current file relative to working dir
+set clipboard=unnamed " Use system clipboard
 
+syntax on				" Syntax highlighting, wee!
 
 " ########## Vundle Stuff  ##########
 
@@ -18,14 +21,13 @@ filetype off
 set rtp+=~/.nvim/bundle/Vundle.vim
 call vundle#begin()
 
-" Bundles to make stuff look sexy
-Plugin 'flazz/vim-colorschemes'
+" General plugins.
 Plugin 'kien/ctrlp.vim'
+Plugin 'flazz/vim-colorschemes'
+
+" Javascript plugins.
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
-
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 call vundle#end()
 
@@ -44,22 +46,22 @@ imap jj <ESC>
 filetype plugin on
 filetype indent on
 
-" ########## Folding  ##########
-
-set foldmethod=indent			" Fold based on indent
-set foldnestmax=3			" 3 levels of foldage
-set nofoldenable			" Don't fold by default
-
-
 " ########## Style ##########
 
-set guifont=Anonymous\ Pro:h20
-colorscheme hornet 
+set guifont=Anonymous\ Pro:h18
+colorscheme jellybeans
 
+" Show lines at the 80 and 120 character marks.
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 let &colorcolumn="80,".join(range(120,999),",")
 
+" Turn trailing whitespace into smiley piles of poo.
 set list
 set listchars=""
 set listchars+=tab:\ \ 
 set listchars+=trail:💩
+
+" ########## Plugin: Ctrl-p  ##########
+
+" Don't index bullshit like node_modules.
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
